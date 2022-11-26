@@ -1,0 +1,159 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+
+                <!-- Container-fluid starts-->
+            
+                <!-- Container-fluid Ends-->
+
+                <!-- Container-fluid starts-->
+            <div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="page-header-left">
+          <h3>Add Products
+            <small>Multikart Admin panel</small>
+          </h3>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <ol class="breadcrumb pull-right">
+          <li class="breadcrumb-item">
+            <a href="index.html">
+              <i data-feather="home"></i>
+            </a>
+          </li>
+          <li class="breadcrumb-item">Digital</li>
+          <li class="breadcrumb-item active">Add Product</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->
+
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row product-adding">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>General</h5>
+        </div>
+        <div class="card-body">
+          <div class="digital-add needs-validation">
+      
+            <form class="dropzone digits" method="post" action="http://localhost:3000/products/addProduct">
+            <div class="form-group">
+              <label  class="col-form-label pt-0"><span>*</span>
+                libelle </label>
+
+
+              <input type="text"  class="form-control"  name="Libelle"  id="inputEmail4">
+              
+           </div>
+               <div class="form-group">
+              <label  class="col-form-label pt-0"><span>*</span>
+                Prix </label>
+
+
+              <input type="number"  class="form-control"  name="Prix"  id="inputEmail4">
+              
+           </div>
+                  <div class="form-group">
+              <label  class="col-form-label pt-0"><span>*</span>
+                Description </label>
+
+
+              <input type="text"  class="form-control"  name="Description"  id="inputEmail4">
+              
+           </div>
+                  <div class="form-group">
+              <label  class="col-form-label pt-0"><span>*</span>
+                Quantite </label>
+
+
+              <input type="number"  class="form-control"  name="Quantite"  id="inputEmail4">
+              
+           </div>
+              <div class="form-group mb-0">
+                <div class="product-buttons">
+                  <button type="submit"   class="btn btn-primary">Add</button>
+                  <button type="button"  class="btn btn-light">Discard</button>
+                </div>
+              </div>
+            </div>
+            </form>
+
+{% endblock %}
+{# <h1>{{title}}</h1>
+
+	<input type="text" placeholder="rechercher..." onkeyup="search(this)"/>
+
+	<table border="1">
+		<thead>
+			<th>FullName</th>
+			<th>Phone</th>
+			<th>Actions</th>
+		</thead>
+		<tbody>
+			{% for contact in cont %}
+				<tr>
+					<td>{{contact.FullName}}</td>
+					<td>{{contact.Phone}}</td>
+					<td>
+						<a href="http://localhost:3000/contacts/edit/{{contact._id}}">
+							<button>Edit</button>
+						</a>
+						<a href="http://localhost:3000/contacts/delete/{{contact._id}}">
+							<button>Delete</button>
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<h1>Add New Contact</h1>
+	<form method="post" action="http://localhost:3000/contacts">
+		FullName:
+		<input type="text" name="FullName" placeholder="your fullname"/><br/>
+		Phone:
+		<input type="number" name="Phone"/><br/>
+		<button type="submit">Add New Contact</button>
+	</form>
+
+	<script type="text/javascript">
+		async function search(e) {
+
+const data = await fetch('http://localhost:3000/contacts/search?search=' + e.value);
+const {contacts} = await data.json();
+if (contacts.length > 0) {
+const tbody = document.querySelector('tbody');
+tbody.innerHTML = '';
+contacts.forEach(contact => {
+tbody.innerHTML += `<tr>
+<td>${
+contact.FullName
+}</td>
+<td>${
+contact.Phone
+}</td>
+<td>
+<a href="http://localhost:3000/contacts/edit/${
+contact._id
+}">
+<button>Edit</button>
+</a>
+<a href="http://localhost:3000/contacts/delete/${
+contact._id
+}">
+<button>Delete</button>
+</a>
+</td>
+</tr>`;
+});
+
+}
+}
+	</script> #}
